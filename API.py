@@ -56,7 +56,7 @@ class HttpGetHandler(BaseHTTPRequestHandler):
         local_path = f"pdfs/{fname}"
         ya_path = f"upload/{urllib.parse.quote(fname)}"
         resp = get(f"https://cloud-api.yandex.net/v1/disk/resources/upload?path={ya_path}",
-                   headers={"Authorization": "OAuth ТОКЕН"})
+                   headers={"Authorization": "OAuth TOKEN"})
         print(resp.text)
         upload_url = json.loads(resp.text)["href"]
         print(upload_url)
